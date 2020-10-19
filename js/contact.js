@@ -35,23 +35,23 @@ $(document).ready(function(){
             },
             messages: {
                 name: {
-                    required: "come on, you have a name, don't you?",
-                    minlength: "your name must consist of at least 2 characters"
+                    required: "Sem nome não temos maneira de saber quem és :(",
+                    minlength: "O teu nome tem de conter pelo menos 2 caracteres"
                 },
                 subject: {
-                    required: "come on, you have a subject, don't you?",
-                    minlength: "your subject must consist of at least 4 characters"
+                    required: "Insere um Assunto para sabermos o que pretendes",
+                    minlength: "O Assunto tem de conter pelo menos 4 caracteres"
                 },
                 number: {
                     required: "come on, you have a number, don't you?",
                     minlength: "your Number must consist of at least 5 characters"
                 },
                 email: {
-                    required: "no email, no message"
+                    required: "Sem email não ha mensagem :("
                 },
                 message: {
-                    required: "um...yea, you have to write something to send this form.",
-                    minlength: "thats all? really?"
+                    required: "hmmm... tens de escrever qualquer coisa para conseguir enviar este formulário de contacto",
+                    minlength: "É tudo o que tens para dizer? A sério?"
                 }
             },
             submitHandler: function(form) {
