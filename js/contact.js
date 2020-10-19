@@ -54,11 +54,11 @@ $(document).ready(function(){
                     minlength: "É tudo o que tens para dizer? A sério?"
                 }
             },
-            submitHandler: function(form) {
+           /* submitHandler: function(form) {
                 $(form).ajaxSubmit({
                     type:"POST",
                     data: $(form).serialize(),
-                    url:"https://formspree.io/f/mnqodnql",
+                    url:"contact_process.php",
                     success: function() {
                         $('#contactForm :input').attr('disabled', 'disabled');
                         $('#contactForm').fadeTo( "slow", 1, function() {
@@ -77,7 +77,7 @@ $(document).ready(function(){
                         })
                     }
                 })
-            }
+            }*/
         })
     })
         
