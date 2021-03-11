@@ -13,6 +13,8 @@ $(window).on('scroll', function () {
 });
 
 
+  //titulo
+  document.getElementsByTagName("title")[0].innerHTML = "FeelEvents";
 
 
 
