@@ -632,8 +632,8 @@ pre code {
     display: flex;
     -ms-flex-wrap: wrap;
     flex-wrap: wrap;
-    margin-right: -15%;
-    margin-left: -15%
+    margin-right: -1%;
+    margin-left: -1%
 }
 
 .no-gutters {
