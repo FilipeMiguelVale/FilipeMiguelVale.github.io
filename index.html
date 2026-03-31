@@ -1,268 +1,145 @@
-<!doctype html>
-<html class="no-js" lang="zxx">
+﻿<!DOCTYPE html>
 
+<html lang="pt">
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>FeelEvents</title>
-    <meta name="description" content="">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <!-- <link rel="manifest" href="site.webmanifest"> -->
-    <link rel="shortcut icon" type="image/x-icon" href="img/favicon.png">
-    <!-- Place favicon.ico in the root directory -->
-
-    <!-- CSS here -->
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/owl.carousel.min.css">
-    <link rel="stylesheet" href="css/magnific-popup.css">
-    <link rel="stylesheet" href="css/font-awesome.min.css">
-    <link rel="stylesheet" href="css/themify-icons.css">
-    <link rel="stylesheet" href="css/gijgo.css">
-    <link rel="stylesheet" href="css/nice-select.css">
-    <link rel="stylesheet" href="css/animate.css">
-    <link rel="stylesheet" href="css/flaticon.css">
-    <link rel="stylesheet" href="css/slicknav.css">
-    <!--<base href="../">-->
-    <link rel="stylesheet" href="css/style.css">
-    <!-- <link rel="stylesheet" href="css/responsive.css"> -->
-
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Feel Events</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Poppins', sans-serif; }
+  </style>
 </head>
+<body class="bg-black text-white">
 
-<body>
-    <!--[if lte IE 9]>
-            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
-        <![endif]-->
-
-    <!-- header-start -->
-    <header>
-        <div class="header-area ">
-            <div id="sticky-header" class="main-header-area">
-                <div class="container">
-                    <div class="header_bottom_border">
-                        <div class="row align-items-center">
-                            <div class="col-xl-3 col-lg-3">
-                                <div class="logo">
-                                    <a href="/">
-                                        <img src="Media/logo_res.png" alt="">
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="col-xl-6 col-lg-6">
-                                <div class="main-menu  d-none d-lg-block">
-                                    <nav>
-                                        <ul id="navigation">
-                                            <li><a href="/" class="active">Inicio</a></li>
-                                            <li><a href="/Galeria">Galeria</a></li>
-                                            <li><a href="performer.html">Parceiros</a></li> 
-                                            <li><a href="#">Sobre Nós <i class="ti-angle-down"></i></a>
-                                                <ul class="submenu">
-                                                    <li><a href="contactos.html">Contactos</a></li>
-                                                </ul>
-                                            </li>
-                                        </ul>
-                                    </nav>
-                                </div>
-                            </div>
-                            <!--
-                            <div class="col-xl-3 col-lg-3 d-none d-lg-block">
-                                <div class="buy_tkt">
-                                    <div class="book_btn d-none d-lg-block">
-                                        <a href="#">Buy Tickets</a>
-                                    </div>
-                                </div>
-                            </div>-->
-                            <div class="col-12">
-                                <div class="mobile_menu d-block d-lg-none"></div>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
+<!-- NAVBAR -->
+<header class="fixed w-full top-0 bg-black/80 backdrop-blur z-50 border-b border-white/10">
+  <div class="max-w-7xl mx-auto flex justify-between items-center p-4">
+    <a href="/index.html" class="flex items-center gap-3"><img src="/logo.svg" class="h-14 text-white" alt="Feel Events" /></a>
+    <nav class="hidden md:flex gap-6 text-sm items-center">
+      <a href="/index.html#servicos">Serviços</a>
+      <div class="relative group">
+        <a href="/equipamento/" class="hover:text-green-400 flex items-center gap-1">Equipamento <span class="text-xs"></span></a>
+        <div class="invisible opacity-0 group-hover:visible group-hover:opacity-100 transition-all duration-200 absolute mt-2 right-0 w-64 bg-black border border-white/10 rounded-xl p-3 shadow-xl z-50">
+          <ul class="space-y-1 text-sm">
+            <li><a href="/equipamento/audio/" class="block px-2 py-1 rounded hover:bg-white/10">Audio</a></li>
+            <li><a href="/equipamento/iluminacao/" class="block px-2 py-1 rounded hover:bg-white/10">Iluminação</a></li>
+            <li><a href="/equipamento/energia/" class="block px-2 py-1 rounded hover:bg-white/10">Energia</a></li>
+            <li><a href="/equipamento/video/" class="block px-2 py-1 rounded hover:bg-white/10">Video</a></li>
+            <li><a href="/equipamento/rigging/" class="block px-2 py-1 rounded hover:bg-white/10">Rigging</a></li>
+            <li><a href="/equipamento/universal/" class="block px-2 py-1 rounded hover:bg-white/10">Universal</a></li>
+          </ul>
         </div>
-    </header>
-    <!-- header-end -->
+      </div>
+      <a href="/index.html#portfolio">Portefólio</a>
+      <a href="/index.html#contacto">Contacto</a>
+      <a href="https://wa.me/351965717720" class="text-green-400 font-semibold"> 965 717 720</a>
+    </nav>
+  </div>
+</header>
+<!-- HERO -->
 
-    <!-- slider_area_start -->
-    <div class="slider_area">
-        <div class="single_slider  d-flex align-items-center slider_bg_1 overlay">
-            <div class="container">
-                <div class="row align-items-center justify-content-center">
-                    <div class="col-xl-12">
-                        <div class="slider_text text-center">
-                            <!--
-                            <div class="shape_1 wow fadeInUp" data-wow-duration="1s" data-wow-delay=".2s">
-                                <img src="img/shape/shape_1.svg" alt="">
-                            </div>
-                            <div class="shape_2 wow fadeInDown" data-wow-duration="1s" data-wow-delay=".2s">
-                                <img src="img/shape/shape_2.svg" alt="">
-                            </div>-->
-                            <!--<span class="wow fadeInLeft" data-wow-duration="1s" data-wow-delay=".3s">12 Feb, 2020</span>-->
-                            <h3 class="wow fadeInLeft" data-wow-duration="3s" data-wow-delay="1s">Bem Vindo!</h3>
-                            <!--<p class="wow fadeInLeft" data-wow-duration="1s" data-wow-delay=".5s">Green Avenue, New York</p>-->
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+<section class="h-screen flex items-center justify-center text-center px-6 bg-[url('https://images.unsplash.com/photo-1492684223066-81342ee5ff30')] bg-cover bg-center">
+  <div class="bg-black/80 p-10 rounded-3xl max-w-3xl">
+    <h1 class="text-5xl md:text-7xl font-bold mb-6">Equipamento</h1>
+    <p class="text-xl text-gray-300 mb-8">Som • Luz • Vídeo • Estruturas</p>
+    <a href="https://wa.me/351965717720" class="bg-white text-black px-8 py-4 rounded-2xl font-semibold inline-block">Pedir Orçamento</a>
+  </div>
+</section>
+
+<!-- Serviços -->
+
+<section id="Serviços" class="py-24 px-6 max-w-6xl mx-auto">
+  <h2 class="text-4xl font-bold text-center mb-16">Serviços</h2>
+  <div class="grid md:grid-cols-3 gap-10">
+    <div class="bg-gray-900 p-8 rounded-3xl">
+      <h3 class="text-xl font-semibold mb-2">Som Profissional</h3>
+      <p class="text-gray-400">PA, monitores e mistura ao vivo</p>
     </div>
-    <!-- slider_area_end -->
-
-    <div class="performar_area black_bg">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="section_title mb-80">
-                        <h3 class="wow fadeInRight" data-wow-duration="1s" data-wow-delay=".3s">Ultimos Trabalhos</h3>
-                    </div>
-                </div>
-            </div>
-            
-            <div  class="row justify-content-center">
-                <div  class="col-lg-8">
-                    <div id="last_jobs" class="row">
-                        
-                         <div class="col-lg-6 col-md-6">
-                            <div   class="single_performer wow fadeInUp" data-wow-duration="1s" data-wow-delay=".6s">
-                                <div data-tilt class="thumb">
-                                    <img src="img/performer/voices.jpg" alt="">
-                                </div>
-                                <div class="performer_heading">
-                                    <h4>Voices All Together</h4>
-                                    <span>Casa Municipal da Cultura - Seia </span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-6 col-md-6">
-                            <div   class="single_performer wow fadeInUp" data-wow-duration="1s" data-wow-delay=".6s">
-                                <div data-tilt class="thumb">
-                                    <img src="img/performer/covilha2.jpg" alt="">
-                                </div>
-                                <div class="performer_heading">
-                                    <h4>Passagem de Ano 2022</h4>
-                                    <span>Covilhã </span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-6 col-md-6">
-                            <div   class="single_performer wow fadeInUp" data-wow-duration="1s" data-wow-delay=".6s">
-                                <div data-tilt class="thumb">
-                                    <img src="img/performer/lenda.jpg" alt="">
-                                </div>
-                                <div class="performer_heading">
-                                    <h4>A Lenda da Serra da Estrela</h4>
-                                    <span>Seia </span>
-                                </div>
-                            </div>
-                        </div>
-
-
-                        <div class="col-lg-6 col-md-6">
-                            <div   class="single_performer wow fadeInUp" data-wow-duration="1s" data-wow-delay=".6s">
-                                <div data-tilt class="thumb">
-                                    <img src="img/performer/martnalia.jpg" alt="">
-                                </div>
-                                <div class="performer_heading">
-                                    <h4>Mart’Nália</h4>
-                                    <span>Casa Municipal da Cultura - Seia </span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+    <div class="bg-gray-900 p-8 rounded-3xl">
+      <h3 class="text-xl font-semibold mb-2">Iluminação</h3>
+      <p class="text-gray-400">Moving heads, wash, beam e efeitos</p>
     </div>
-
-    <!-- brand_area_start  -->
-    <div class="brand_area black_bg">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="section_title text-center mb-80">
-                        <h4 class="wow fadeInRight" data-wow-duration="1s" data-wow-delay=".3s">Parceiros</h4>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="brand_wrap">
-                        <div class="brand_active owl-carousel">
-                            <div class="single_brand text-center">
-                                <img src="img/brand/1.png" alt="">
-                            </div>
-                            <div class="single_brand text-center">
-                                <img src="img/brand/2.png" alt="">
-                            </div>
-                            <div class="single_brand text-center">
-                                <img src="img/brand/3.png" alt="">
-                            </div>
-                            <div class="single_brand text-center">
-                                <img src="img/brand/4.png" alt="">
-                            </div>
-                            <div class="single_brand text-center">
-                                <img src="img/brand/5.png" alt="">
-                            </div>
-
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+    <div class="bg-gray-900 p-8 rounded-3xl">
+      <h3 class="text-xl font-semibold mb-2">Estruturas</h3>
+      <p class="text-gray-400">Palcos, truss e rigging</p>
     </div>
+  </div>
+</section>
 
-   
-    <!-- footer_start  -->
-    <footer class="footer">
-        <div class="copy-right_text">
-            <div class="container">
-                <div class="row">
-                    <div class="col-xl-12">
-                        <p class="copy_right text-center wow fadeInDown" data-wow-duration="1s" data-wow-delay=".5s">
-                            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-Copyright FeelEvents&copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
-<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </footer>
-    <!-- footer_end  -->
+<!-- EQUIPAMENTO -->
 
-    <!-- JS here -->
-    <script src="js/vendor/modernizr-3.5.0.min.js"></script>
-    <script src="js/vendor/jquery-1.12.4.min.js"></script>
-    <script src="js/popper.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/owl.carousel.min.js"></script>
-    <script src="js/isotope.pkgd.min.js"></script>
-    <script src="js/ajax-form.js"></script>
-    <script src="js/waypoints.min.js"></script>
-    <script src="js/jquery.counterup.min.js"></script>
-    <script src="js/imagesloaded.pkgd.min.js"></script>
-    <script src="js/scrollIt.js"></script>
-    <script src="js/jquery.scrollUp.min.js"></script>
-    <script src="js/wow.min.js"></script>
-    <script src="js/gijgo.min.js"></script>
-    <script src="js/nice-select.min.js"></script>
-    <script src="js/jquery.slicknav.min.js"></script>
-    <script src="js/jquery.magnific-popup.min.js"></script>
-    <script src="js/tilt.jquery.js"></script>
-    <script src="js/plugins.js"></script>
+<section id="equipamento" class="py-24 bg-gray-900 px-6">
+  <h2 class="text-4xl font-bold text-center mb-16">Equipamento para Aluguer</h2>
+  <div class="grid md:grid-cols-3 gap-10 max-w-6xl mx-auto">
 
+<div class="bg-black p-6 rounded-3xl">
+  <img src="https://images.unsplash.com/photo-1511379938547-c1f69419868d" alt="Beam 7R" class="rounded-xl mb-4" />
+  <h3 class="text-lg font-semibold">Beam 7R</h3>
+  <p class="text-gray-400 text-sm">Beam Angle 3Â°, 16/20 canais DMX</p>
+  <a href="https://wa.me/351965717720" class="mt-4 inline-block text-sm underline">Pedir info</a>
+</div>
 
+<div class="bg-black p-6 rounded-3xl">
+  <img src="https://images.unsplash.com/photo-1507874457470-272b3c8d8ee2" alt="Sistema Line Array" class="rounded-xl mb-4" />
+  <h3 class="text-lg font-semibold">Sistema Line Array</h3>
+  <p class="text-gray-400 text-sm">Som para eventos de grande escala</p>
+  <a href="https://wa.me/351965717720" class="mt-4 inline-block text-sm underline">Pedir info</a>
+</div>
 
-    <!--contact js-->
-    <script src="js/contact.js"></script>
-    <script src="js/jquery.ajaxchimp.min.js"></script>
-    <script src="js/jquery.form.js"></script>
-    <script src="js/jquery.validate.min.js"></script>
-    <script src="js/mail-script.js"></script>
+<div class="bg-black p-6 rounded-3xl">
+  <img src="https://images.unsplash.com/photo-1470225620780-dba8ba36b745" alt="Truss AlumÃ­nio" class="rounded-xl mb-4" />
+  <h3 class="text-lg font-semibold">Truss AlumÃ­nio</h3>
+  <p class="text-gray-400 text-sm">Estruturas modulares seguras</p>
+  <a href="https://wa.me/351965717720" class="mt-4 inline-block text-sm underline">Pedir info</a>
+</div>
 
+  </div>
+  <div class="text-center mt-10">
+    <a href="equipamento/" class="inline-block bg-green-500 text-black px-6 py-3 rounded-xl font-semibold hover:bg-green-400">Ver catÃ¡logo completo de equipamento</a>
+  </div>
+</section>
 
-    <script src="js/main.js"></script>
+<!-- PORTFÃ“LIO -->
+
+<section id="portfolio" class="py-24 px-6">
+  <h2 class="text-4xl font-bold text-center mb-16">Eventos Realizados</h2>
+  <div class="grid md:grid-cols-3 gap-6 max-w-6xl mx-auto">
+    <img src="https://images.unsplash.com/photo-1492684223066-81342ee5ff30" class="rounded-3xl" />
+    <img src="https://images.unsplash.com/photo-1506157786151-b8491531f063" class="rounded-3xl" />
+    <img src="https://images.unsplash.com/photo-1470225620780-dba8ba36b745" class="rounded-3xl" />
+  </div>
+</section>
+
+<!-- CONTACTO -->
+
+<section id="contacto" class="py-24 bg-white text-black text-center px-6">
+  <h2 class="text-4xl font-bold mb-6">Pede o teu orÃ§amento</h2>
+  <p class="mb-4">ðŸ“ž 965 717 720</p>
+  <p class="mb-8">Resposta rÃ¡pida e sem compromisso</p>
+  <a href="https://wa.me/351965717720" class="bg-black text-white px-10 py-4 rounded-2xl inline-block">Falar no WhatsApp</a>
+</section>
+
+<!-- WHATSAPP FLOAT -->
+
+<a href="https://wa.me/351965717720" class="fixed bottom-6 right-6 bg-green-500 text-white px-5 py-3 rounded-full shadow-lg">WhatsApp</a>
+
+<!-- FOOTER -->
+
+<footer class="py-10 text-center text-gray-600">
+  Feel Events Â© 2026 â€¢ ðŸ“ž 965 717 720
+</footer>
+
 </body>
-
 </html>
+
+
+
+
+
+
+
+
+
+
