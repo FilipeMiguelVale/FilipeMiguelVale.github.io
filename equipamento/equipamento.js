@@ -1,6 +1,7 @@
 const csvUrl = '/Exportar_Equipamento_20260331.csv';
 let inventory = [];
 let currentFilterCategory = '';
+let currentFilterSubcategory = '';
 
 const formatText = (t) => (t || '').toLowerCase();
 
@@ -35,8 +36,7 @@ const cardHtml = (item) => `
   <article class="card-hover bg-gray-900 p-6 rounded-3xl border border-white/10 shadow-lg">
     <h3 class="text-xl font-semibold mb-2">${item.name}</h3>
     <p class="text-gray-300 text-sm mb-3">${item.fullCategory}</p>
-    <p class="text-green-400 font-medium mb-3">Disponível: em stock</p>
-    <a href="https://wa.me/351965717720" class="text-green-400 underline">Pedir info</a>
+    <a href="/equipamento/item.html?item=${encodeURIComponent(item.name)}" class="text-green-400 underline font-semibold">Saber mais</a>
   </article>`;
 
 const getActiveCategory = () => {
@@ -55,13 +55,18 @@ const renderInventory = (filterCategory = '') => {
   const count = document.getElementById('equip-count');
   const query = formatText(document.getElementById('equip-search').value || '');
 
+  const activeSubcategory = document.getElementById('equip-subcategory')?.value || currentFilterSubcategory || '';
+  currentFilterSubcategory = activeSubcategory;
+
   const filtered = inventory.filter((item) => {
     const matchesCategory = !activeCategory || item.category === activeCategory;
-    const matchesSearch = !query || formatText(item.name).includes(query) || formatText(item.fullCategory).includes(query);
-    return matchesCategory && matchesSearch;
+    const matchesSubcategory = !activeSubcategory || item.subcategory === activeSubcategory;
+    const matchesSearch = !query || formatText(item.name).includes(query) || formatText(item.subcategory).includes(query);
+    return matchesCategory && matchesSubcategory && matchesSearch;
   });
 
-  count.textContent = `${filtered.length} itens encontrados de ${inventory.length}`;
+  const totalForCategory = activeCategory ? inventory.filter((item) => item.category === activeCategory).length : inventory.length;
+  count.textContent = `${filtered.length} itens encontrados de ${totalForCategory}`;
 
   if (!filtered.length) {
     grid.innerHTML = '<p class="text-gray-300 col-span-full">Nenhum item encontrado. Tente outro filtro.</p>';
@@ -92,26 +97,63 @@ const renderInventory = (filterCategory = '') => {
   }).join('');
 };
 
+const populateSubcategories = () => {
+  const subcategorySelect = document.getElementById('equip-subcategory');
+  if (!subcategorySelect) return;
+  const categoryValue = currentFilterCategory || document.getElementById('equip-category')?.value || '';
+  const items = categoryValue ? inventory.filter((item) => item.category === categoryValue) : inventory;
+  const subcategories = [...new Set(items.map((item) => item.subcategory))].sort();
+  subcategorySelect.innerHTML = '<option value="">Todas as subcategorias</option>' + subcategories.map((sub) => `<option value="${sub}">${sub}</option>`).join('');
+  if (currentFilterSubcategory && subcategories.includes(currentFilterSubcategory)) {
+    subcategorySelect.value = currentFilterSubcategory;
+  }
+};
+
 const populateCategories = () => {
   const categorySelect = document.getElementById('equip-category');
   const categories = [...new Set(inventory.map((item) => item.category))].sort();
-  categorySelect.innerHTML = '<option value="">Todas as categorias</option>' + categories.map((cat) => `<option value="${cat}">${cat}</option>`).join('');
-  if (currentFilterCategory && categories.includes(currentFilterCategory)) {
-    categorySelect.value = currentFilterCategory;
+
+  if (categorySelect) {
+    if (currentFilterCategory && categories.includes(currentFilterCategory)) {
+      categorySelect.innerHTML = `<option value="${currentFilterCategory}">${currentFilterCategory}</option>`;
+      categorySelect.value = currentFilterCategory;
+      categorySelect.disabled = true;
+    } else {
+      categorySelect.disabled = false;
+      categorySelect.innerHTML = '<option value="">Todas as categorias</option>' + categories.map((cat) => `<option value="${cat}">${cat}</option>`).join('');
+      if (currentFilterCategory && categories.includes(currentFilterCategory)) {
+        categorySelect.value = currentFilterCategory;
+      }
+    }
   }
+
+  populateSubcategories();
 };
 
 const setupSearch = () => {
   const searchInput = document.getElementById('equip-search');
   const categorySelect = document.getElementById('equip-category');
+  const subcategorySelect = document.getElementById('equip-subcategory');
 
-  const getActiveCategory = () => categorySelect.value || currentFilterCategory || '';
+  const getActiveCategory = () => categorySelect?.value || currentFilterCategory || '';
 
   searchInput.addEventListener('input', () => renderInventory(getActiveCategory()));
-  categorySelect.addEventListener('change', (event) => {
-    currentFilterCategory = event.target.value || '';
-    renderInventory(getActiveCategory());
-  });
+
+  if (categorySelect) {
+    categorySelect.addEventListener('change', (event) => {
+      currentFilterCategory = event.target.value || '';
+      currentFilterSubcategory = '';
+      populateSubcategories();
+      renderInventory(getActiveCategory());
+    });
+  }
+
+  if (subcategorySelect) {
+    subcategorySelect.addEventListener('change', (event) => {
+      currentFilterSubcategory = event.target.value || '';
+      renderInventory(getActiveCategory());
+    });
+  }
 };
 
 const loadInventory = async (filterCategory = '') => {
